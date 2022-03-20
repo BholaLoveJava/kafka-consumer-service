@@ -13,11 +13,11 @@ public class KafkaConsumerService {
 
     @KafkaListener(topics="kafka_example", groupId = "group_id")
     public void consume(String message){
-        logger.info("Message Consumed Successfully :: "+message);
+        logger.info("Message Consumed Successfully -> {}",message);
     }
 
     @KafkaListener(topics="kafka_model_json", groupId = "group_json",containerFactory = "employeeModelConcurrentKafkaListenerContainerFactory")
     public void consume(EmployeeModel employeeData){
-        logger.info("Message Consumed Successfully :: "+employeeData);
+        logger.info("Message Consumed Successfully -> {}",employeeData);
     }
 }
